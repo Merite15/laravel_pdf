@@ -22,6 +22,9 @@ class PdfController extends Controller
 
             $pdf = PDF::loadView('welcome');
 
+            $pdf->setOption('enable-javascript', true);
+            $pdf->setOption('images', true);;
+
             // download pdf
 
             return $pdf->download('userlist.pdf');
